@@ -1,0 +1,6 @@
+#Carpetas
+node_modules
+tests
+
+#ejecutables
+*.exe
