@@ -23,7 +23,7 @@ O si quieres una ruta que está bajo una subcarpeta/subruta
 Finalmente, tuRouter.js deberia estar construido de la siguiente manera:
 
 ```js
-// 
+// tuRouter.js
 const {Router} = require('express');
 //  Instanciamos nuestro router
 const router = Router();
