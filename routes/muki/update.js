@@ -13,8 +13,9 @@ const onSucessMessage = {
 
 /* Información de Muki. */
 router.post('/update', (req, res, next) => {
+  console.log(req.body)
 
-  // RECORDAR: El request se parsea automáticamente a JSON.
+
   try {
     latestInformation = req.body;
     res.send(onSucessMessage);

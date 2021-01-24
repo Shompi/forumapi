@@ -2,7 +2,8 @@
 
 ## - Especificaciones
 - La API usa el puerto `4000`
-- Recordar: Si la api recibe un post request con los siguientes headers: `Accept: application/json` y `Content-Type: application/json`, el `body` del request será **automáticamente parseado a json al momento de entrar a tu router**, en caso de que los headers anteriores estén presentes en el request pero el cuerpo no pueda ser parseado correctamente, la API enviará un error al cliente.
+- Recordar: Si la api recibe un post request con el siguiente header: `Content-Type: application/json`, el `body` del request será **automáticamente parseado a json al momento de entrar a tu router**, en caso de que los headers anteriores estén presentes en el request pero el cuerpo no pueda ser parseado correctamente, la API enviará un error al cliente.
+- Si la API recibe un post request sin el header `Content-Type: application/json` el body será un objeto vacío.
 ## - Instalar dependencias
 `npm install` dentro de la carpeta del proyecto
 
