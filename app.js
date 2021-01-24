@@ -3,15 +3,18 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const app = express();
 
 
 // routers
 const indexRouter = require('./routes/index');
 const botinfoRouter = require('./routes/muki/update');
 
+// Cors
+const cors = require('cors');
+app.use(cors());
 
 // view engine setup
-const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
