@@ -8,7 +8,7 @@ const app = express();
 
 // routers
 const indexRouter = require('./routes/index');
-const botinfoRouter = require('./routes/muki/update');
+const muki = require('./routes/muki');
 
 // Cors
 const cors = require('cors');
@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/muki', botinfoRouter);
+app.use('/muki', muki);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

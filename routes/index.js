@@ -1,19 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const { Router } = require('express');
+const router = Router();
 
-/* GET home page. */
-router.get('/', (req, res, next) => {
+// Ruta base de la API, administra todos los métodos http (GET, POST, UPDATE, PATCH, etc)
+router.all('/', (req, res, next) => {
+
+  // Si el request acepta un JSON devuelta
   if (req.headers.accept == "application/json") {
     res.send({ message: "Hello!", status: 200 });
 
   } else {
+    // Si no mandamos una respuesta solo con texto.
     res.send("Hello there!");
   }
-
-});
-
-router.post('/', (req, res, next) => {
-
 });
 
 module.exports = router;
