@@ -5,11 +5,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const app = express();
 
-
-// routers
-const indexRouter = require('./routes/index');
-const muki = require('./routes/muki');
-
 // Cors
 const cors = require('cors');
 app.use(cors());
@@ -28,8 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/muki', muki);
+app.use('/', require('./routes/index'));
+app.use('/muki', require('./routes/muki'));
+app.use('/exiliados', require('./routes/exiliados'));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
