@@ -1,7 +1,118 @@
 const express = require('express');
 const router = express.Router();
 
-let guilds = null;
+let guilds = [
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+  {
+    name: "Guild de Ejemplo",
+    icon: "https://www.trecebits.com/wp-content/uploads/2020/12/Que-es-Discord.jpg",
+    members: 69,
+    channels: 420,
+    owner: {
+      tag: "Example#0000",
+      avatar: "https://i2.wp.com/cdn.getapk.app/imgs/a/b/8/ab88671aa7e80b755c75ce6416b370ae_icon.png"
+    }
+  },
+]; // Guild predeterminada
 
 
 // En traspaso exitoso
@@ -15,7 +126,7 @@ router.post('/update', (req, res, next) => {
 
   if (req.headers['content-type'] === "application/json") {
     try {
-      guilds = req.body;
+      guilds = req.body.guilds;
       res.send(onSucessMessage);
 
     } catch (e) {
@@ -36,7 +147,7 @@ router.get('/guilds', (req, res, next) => {
 
   res.send({
     status: 200,
-    guilds: guilds?.guilds
+    guilds: guilds
   });
 
 
